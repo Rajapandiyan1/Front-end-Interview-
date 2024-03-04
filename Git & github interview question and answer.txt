@@ -1,0 +1,47 @@
+
+ 1 .  What is GitHub?
+
+     	GitHub is a web-based platform that provides Git repository hosting along with collaboration features like bug tracking, task management, and wikis.
+
+ 2 .  What is the difference between Git and GitHub?
+
+    	Git is the version control system, while GitHub is a web-based platform that provides hosting for Git repositories. GitHub adds collaboration 
+	features such as pull requests, issues, and project management on top of Git.
+
+ 3 . What is a Git repository?
+
+    	A Git repository is a storage space where a project's history, code, and branches are stored. It can be either local or remote.
+
+ 4 . What is a Git branch?
+
+    	A Git branch is a separate line of development that allows developers to work on features, bug fixes, or experiments without affecting the main codebase. 
+	Branches can be merged back into the main branch when the changes are ready.
+
+ 5 . How to delete respositery in remote and local ?
+
+	git branch -d feature-branch    # Delete locally
+	git push origin --delete feature-branch   # Delete remotely
+
+ 6 . Difference between Local Centralized Repository and Distributed Repository ?
+
+	Local Repository: Single-user, local machine, fast operations, limited collaboration.
+    	Centralized Repository: Hosted on a remote server, facilitates collaboration, requires network connectivity.
+    	Distributed Repository: Each developer has a complete copy, allows offline work, flexible collaboration.
+
+ 7 . Explain what a Git commit hash is.
+
+	A Git commit hash is a unique identifier for a commit. It is a SHA-1 hash generated based on the content of the commit and its metadata. 
+	It ensures the integrity of the commit and allows easy reference to specific commits.
+
+ 8 . Git work flow ?
+
+	git init (Initialize working directory) - > git add file (working direactory to staging area) - > git commit -m 'added' - > (staging area to local repo )
+
+	- > git push origin master (local repo to remote repo).
+
+ 9 . How does Git handle branching and merging?
+
+    	Git handles branching and merging efficiently. Developers can create branches for different features or bug fixes, and Git allows easy merging of changes 
+	from one branch to another using commands like git merge or git rebase.
+
+ 10 . 

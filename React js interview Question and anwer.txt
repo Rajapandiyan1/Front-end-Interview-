@@ -1,0 +1,502 @@
+
+ 1 . What is React js ?
+
+	React.js is a JavaScript library for building user interfaces.
+	It helps developers create reusable UI components, efficiently update the interface using a virtual DOM.
+	React is widely used for building modern web applications and is known for its component-based architecture.
+
+ 2 . Why use React ?
+
+	Component-Based Architecture: React is based on a component-based architecture, which allows developers to break down
+	the user interface into reusable and manageable components.
+
+	Virtual DOM: React uses a virtual DOM to optimize the updating of the actual DOM. Instead of updating the entire DOM when a change occurs,
+	React updates a virtual representation of the DOM and then efficiently determines the minimal changes needed to update the real DOM.
+
+	JSX (JavaScript XML): React uses JSX, a syntax extension for JavaScript, which allows developers to write HTML-like code within their JavaScript files.
+
+ 3 . What is JSX ?
+
+	JSX, or JavaScript XML, is a syntax extension for JavaScript commonly used with React. It allows developers to write HTML-like code within JavaScript,
+	making it easier to describe and visualize the structure of user interfaces in React applications.
+
+ 4 . Difference between in Actual dom vs virtual dom ?
+
+	Memory Waste:
+        Actual DOM: Can lead to memory inefficiencies due to frequent re-rendering of the entire structure.
+        Virtual DOM: Minimizes memory waste by updating a lightweight, in-memory representation before synchronizing with the actual DOM.
+
+        Updated Fast:
+        Actual DOM: Updates can be slower as changes directly impact the live HTML structure.
+        Virtual DOM: Updates are faster as changes are first applied to the virtual DOM, allowing for optimized synchronization with the actual DOM.
+
+        Nature:
+        Actual DOM: Represents the real-time HTML structure in the browser.
+        Virtual DOM: A virtual, lightweight counterpart used for efficient manipulation and updating.
+
+ 5 .difference between Functional component vs class component ?
+	
+	Functional Component :
+	Constructors are not used. 
+	props are directly passed as an argument to the function.
+	state is managed using the useState hook.
+	There is no render method used in functional components. 		
+	Functional Components introduce in  React 16.8 (released in February 2019).
+
+	Ex code :
+	
+	import React, { useState } from 'react';
+	
+	const MultipleStateExample = () => {
+	  const [count, setCount] = useState(0);
+	  const [message, setMessage] = useState('Initial Message');
+	
+	  const handleIncrement = () => {
+	    setCount(count + 1);
+	  };
+	
+	  const handleMessageChange = (e) => {
+	    setMessage(e.target.value);
+	  };
+	
+	  return (
+	    <div>
+	      <p>Count: {count}</p>
+	      <button onClick={handleIncrement}>Increment</button>
+      	<br />
+      	<label>
+        	Message:
+        	<input
+          type="text"
+       	   value={message}
+       	   onChange={handleMessageChange}
+		        />
+	      </label>
+	      <p>Current Message: {message}</p>
+	    </div>
+	  );
+	};
+	export default MultipleStateExample;
+
+	Class Component :
+	Constructor is used as it needs to store state. 
+	props are accessed using this.props.
+	state is initialized in the constructor using this.state.
+	It must have the render() method returning JSX (which is syntactically similar to HTML)
+	Traditional method is class Component.
+
+	Ex code :
+
+	import React, { Component } from 'react';
+	class MultipleStateExample extends Component {
+	  constructor(props) {
+	    super(props);
+	    this.state = {
+	      count: 0,
+	      message: 'Initial Message',
+	    };
+	  }	
+		  handleIncrement = () => {
+	    this.setState({ count: this.state.count + 1 });
+	  };
+	
+	  handleMessageChange = (e) => {
+	    this.setState({ message: e.target.value });
+	  };
+	
+	  render() {
+	    return (
+	      <div>
+	        <p>Count: {this.state.count}</p>
+	        <button onClick={this.handleIncrement}>Increment</button>	
+		<br />
+	        <label>
+	          Message:
+	          <input
+	       	     type="text"
+	            value={this.state.message}
+	            onChange={this.handleMessageChange}
+	          />
+	        </label>
+	        <p>Current Message: {this.state.message}</p>
+	      </div>
+	    );
+	  }
+	}
+	export default MultipleStateExample;
+
+ 6. Difference between state vs Props ?
+
+	State:
+
+    Internal mutable data of a component.
+    Managed using this.state (class components) or useState hook (functional components).
+    Mutable and local to the component.
+
+	Props:
+
+    External immutable data passed from parent to child.
+    Received as parameters in the child component.
+    Immutable and used for communication between component.
+
+ 7 . Difference between JSX vs HTML ?
+
+	Dynamic Expression:
+        JSX: Supports embedding dynamic JavaScript expressions within curly braces {}.
+        HTML: Does not support dynamic expressions directly; dynamic content is usually handled with JavaScript separately.
+
+        Attribute Names:
+        JSX: Attribute names follow camelCase convention (e.g., className instead of class).
+        HTML: Attribute names typically use lowercase (e.g., class).
+
+ 8 . Explain the rule of Hooks ?
+
+	Top Level:
+
+  	Hooks (e.g., useState, useEffect) should be called at the top level of a functional component.
+
+	Functional Components:
+
+        Hooks are meant to be used inside React functional components or custom Hooks, not in regular JavaScript functions.
+
+	Same Order:
+
+        Hooks should be called in the same order on every render for consistency and proper state management.
+
+ 9 . What is the purpose of the useEffect Hook?
+
+	The useEffect Hook is used for handling side effects in functional components. It runs after every render and
+	allows you to perform tasks like data fetching, subscriptions, or manually changing the DOM.
+
+ 10 . Explain the useState Hook.
+
+	useState is a React Hook used for adding state to functional components. It returns an array with two elements:
+	the current state value and a function to update that value. The initial state is passed as an argument to useState.
+
+ 11 . What is the purpose of React Router?
+
+	React Router is used for navigation in React applications, enabling the creation of single-page applications with dynamic, client-side routing.
+
+ 12 . What is Key and List in React js ?
+
+	The key helps React efficiently update the list when items are added, removed, or reordered.
+	Each li element is assigned a unique key using the item.id.
+
+ 13 . What is Redux in React js ? 
+
+	Redux is an open-source JavaScript library for managing the state of an application in a predictable way.
+
+	Redux provides a centralized state container that holds the entire state of the application. 
+
+        useSelector :
+	In the context of React and Redux, useSelector is a hook provided by the React-Redux library.
+	It allows functional components to extract and subscribe to slices of the Redux store's state.
+
+	useDispatch :
+	The dispatch function is used to dispatch actions to the Redux store which in turn triggers the corresponding
+	reducers to update the state.
+
+	configureStore is a function that simplifies creating a Redux store.
+
+	createSlice is a function for creating reducers and actions in a concise way
+
+	usedispatch()-> arguement inside action perform -> Redux store inside Previous state get ->
+	action perform to the state value change. 
+
+ 14 . Difference between useMemo vs useEffect ?
+
+	useMemo: The memoized function is re-executed only when the values in the dependency array change.
+	useMemo: Returns a memoized value.
+
+	useEffect: The effect function is executed after every render, and the execution can be controlled by the
+	dependencies array.
+	useEffect: Typically does not return a value.
+
+ 15 . differece between useState vs useReducer ?
+
+	Complexity:
+        useState: Simple state management.
+        useReducer: Suited for complex state logic.
+
+        Updates:
+        useState: Direct state updates.
+        useReducer: Updates based on actions dispatched through a reducer function.
+
+ 16 . difference between usereducer vs useContext in react js ?
+
+	useReducer: Primarily used for managing complex state logic and transitions in a predictable way.
+	useReducer: Centralizes state logic in a reducer function and dispatches actions to modify the state.
+
+	useContext: Primarily used for providing and consuming values across components in a tree without prop-drilling.
+	useContext: Shares a single value (state) across components without dispatching actions;
+ 17 .  What is a ternary operator in JavaScript? Can you provide an example?
+
+	The ternary operator (? :) is a shorthand for an if-else statement. It takes three operands – a condition,
+	an expression to execute if the condition is true, and another expression to execute if the condition is false.
+
+	Ex code :
+	const result = (condition) ? "It's true" : "It's false";
+
+ 18 . Explain the use of the && operator in JavaScript. How does it work?
+
+	The && operator is the logical AND operator in JavaScript.
+	It returns the value of the second operand if the first operand is truthy; otherwise, it returns the value
+	of the first operand.
+
+	Ex code :
+	const result = (true && "It's true") // Result: "It's true"
+	const result2 = (false && "It's true") // Result: false
+
+	Use in Jsx For example code :->
+	function MyComponent({ isLoggedIn }) {
+	  return (
+	    <div>
+	      {isLoggedIn && <p>Welcome, user!</p>}
+	    </div>
+	  );
+	}
+
+ 19 . import keyword use in with Curly and without Curly ?
+	
+	without curly :->
+	When you import without curly brackets, you are importing the default export from the module.
+	Ex code :
+	// In module1.js
+	const MyComponent = () => { /* code */ };
+	export default MyComponent;
+	// In another file
+	import MyComponent from './module1';
+
+	with curly :->
+	When you import with curly brackets, you are importing named exports from the module.
+	Ex code :
+	// In module1.js
+	export const function1 = () => { /* code */ };
+	export const function2 = () => { /* code */ };
+	// In another file
+	import { function1, function2 } from './module1';
+
+ 20 . Difference between export default and export name ?
+
+	Export Default :
+	module uses export default, you import without curly brackets and assign any name you want.
+	Export Names :
+	If the module uses named exports with export, you import with curly brackets and
+	use the exact names specified in the module.
+
+ 21 . what event delegation in React js ?
+
+	Event delegation is a concept where a single event listener is used to manage multiple similar elements
+	instead of attaching individual event listeners to each element.
+
+	Ex code :
+	import React, { useState } from 'react';
+	const DynamicList = () => {
+	const[items, setItems] = useState([
+	    { id: 1, text: 'Item 1' },
+	    { id: 2, text: 'Item 2' },
+	    { id: 3, text: 'Item 3' },
+	  ]);
+	
+	  const handleClick = (event) => {	
+	    // 	Extract the data attribute from the clicked element
+	    const itemId = event.target.dataset.id;
+	
+	    // Do something with the clicked item, for example, remove it from the list
+	    setItems((prevItems) => prevItems.filter((item) => item.id !== parseInt(itemId)));
+	  };
+	
+	  return (
+	    <ul onClick={handleClick}>
+	      {items.map((item) => (
+	        <li key={item.id} data-id={item.id}>
+	          {item.text}
+	        </li>
+	      ))}
+	    </ul>
+	  );
+	};
+	export default DynamicList;
+ 22 . Form data management in React js
+
+	State: Use useState to manage form data.
+	Input Handling: Capture changes with onChange event.
+	State Update: Use setFormData to update state.
+	Submission: Handle form submission with onSubmit.
+	Controlled Components: Connect input values to state.
+	Input Elements: Create inputs with names, values, and onChange.
+	Submit Button: Include a "submit" button in the form.
+
+	Ex code :
+
+	import React, { useState } from 'react';
+
+	const MyForm = () => {
+  	const [formData, setFormData] = useState({
+    	firstName: '',
+    	lastName: '',
+    	email: '',
+  	});
+  	const handleInputChange = (e) => {
+    	const { name, value } = e.target;
+    	setFormData({ ...formData, [name]: value });
+  	};
+  	const handleSubmit = (e) => {
+    	e.preventDefault();
+    	console.log('Form data:', formData);
+    	// Perform actions with the form data, e.g., send it to a server
+  	};
+ 	 return (
+	      <form onSubmit={handleSubmit}>
+	      <input type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} />
+	      <input type="text" name="lastName" value={formData.lastName} onChange={handleInputChange} />
+	      <input type="email" name="email" value={formData.email} onChange={handleInputChange} />
+	      <button type="submit">Submit</button>
+	    </form>
+	  );
+	};
+	export default MyForm;
+
+ 23 . Difference between useCallback vs useEffect in React js ?
+
+	    useCallback: Memoizes functions to prevent unnecessary renders of child components.
+	    useEffect: Manages side effects after a component renders, such as data fetching or DOM manipulation. 
+
+ 24 . Why use usecallback hooks in React js ?
+
+	Problem:
+	Passing a new function reference as a prop on each render can trigger unnecessary re-renders in child components.
+
+	Solution with useCallback:
+	Use useCallback to memoize the function, ensuring that it is only recreated when its dependencies change
+
+ 25 . What is Hooks in React js ?
+
+	Hooks allow us to "hook" into React features such as state and lifecycle methods.
+
+ 26 . What is React.memo in react js ?
+
+	Using memo will cause React to skip rendering a component if its props have not changed.
+
+	This can improve performance.
+
+ 27 . What is Event Hanlding in React js ?
+
+	Event Handling:
+
+	React uses camelCase event names, such as onClick, onChange, etc.
+	The event handler function receives a synthetic event object as its argument.
+	Access event properties like event.target.value or event.preventDefault().
+ 
+ 28 . What is the purpose of componentDidMount?
+	componentDidMount is called after the component is rendered to the DOM.
+	It's commonly used for tasks like fetching data.
+
+ 29 . difference between componentDidUpdate and componentWillUnmount ?
+
+	componentDidUpdate is for actions after a component updates.
+	componentWillUnmount is for cleanup before a component is removed
+
+ 30 . Lifeclycle of class component in React js ?
+
+	Contructor - > DidMount ( Once Dom tree structure ) - > DidUpdate (Dom element value update ) - > WillUnmount (
+	Dom Element Delete )
+
+ 31 . Class component life method Example code ?
+
+	Example code :
+
+	import React, { Component } from 'react';
+
+	class MyComponent extends Component {
+  	constructor(props) {
+    	super(props);
+    	this.state = {
+       };
+  	}
+ 	 componentDidMount() {
+  	  console.log('Component did mount');
+  	}
+ 	 componentDidUpdate(prevProps, prevState) {
+  	  console.log('Component did update', prevProps, prevState);
+  	}
+	  componentWillUnmount() {
+	    console.log('Component will unmount');
+	  }
+	
+	  render() {
+	    return (
+	      <div>
+	        {/* Your component's UI goes here */}
+	      </div>
+	    );
+	  }
+	}
+	export default MyComponent;
+
+ 32 . React Life cycle in Class Component and Functional Component ?
+
+	Work Flow : - > 
+	Mounting: contructor - > render - > componentDidMount
+	Updating:  render - > componentDidUpdate
+	unMounting :ComponentWillUnmount
+
+	Functional component Work Flow : - >
+
+	useEffect with an empty dependency array mimics componentDidMount.
+	useEffect with a dependency array mimics componentDidUpdate.
+
+ 33 . What is React Fragment ?
+
+	A React Fragment is a syntax (<>...</>) that allows grouping multiple elements without adding extra DOM nodes.
+	It helps maintain a clean structure in the code.
+
+ 34 . What are React Components?
+
+	React components are modular, reusable building blocks for UI elements.
+	They can be either functional or class-based.
+
+ 35 . What is the role of a React Router?
+
+	React Router is a library that enables navigation and routing in React applications.
+	It allows you to navigate between different components/pages without a full-page reload.
+
+ 36 . What is HOC in React js ?
+
+	Higher-Order Components (HOCs) in React are functions that take a component and return a new component with enhanced features or additional props,
+	allowing for code reuse and behavior composition.
+
+	Ex code :
+	import React from 'react';
+		
+	// Higher-Order Component: withLogger
+	const withLogger = (WrappedComponent) => {
+	  return class extends React.Component {
+	    componentDidMount() {
+	      console.log('Component is mounted');
+	    }
+	
+	    render() {
+	      // Enhance the wrapped component by adding logging functionality
+	      return <WrappedComponent {...this.props} />;
+	    }
+	  };
+	};
+	
+	// Component to be enhanced
+	const MyComponent = (props) => {
+	  return (
+	    <div>
+	      <p>Hello, {props.name}!</p>
+	    </div>
+	  );
+	};
+	
+	// Applying the HOC to the component
+	const EnhancedComponent = withLogger(MyComponent);
+	
+	// Usage of the enhanced component
+	const App = () => {
+	  return <EnhancedComponent name="John" />;
+	};
+	export default App;

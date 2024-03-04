@@ -1,0 +1,336 @@
+
+ 1 . What is css ?
+
+	CSS (Cascading Style Sheets) is a language used to style the visual presentation of HTML and XML documents on the web. It controls layout, design, and
+	appearance, separating them from the document's structure.
+
+ 2 . What is selector and types ?
+
+	element Selector: Selects all elements of a type (e.g., p).
+    	Class Selector: Selects elements with a specific class (e.g., .example).
+    	ID Selector: Selects a single element with a specific ID (e.g., #header).
+    	Attribute Selector: Selects elements based on their attributes (e.g., input[type="text"]).
+	Universal Selector: The universal selector (*) in CSS selects all elements on a webpage, allowing global styling. 
+	Group Selector :A group selector in CSS allows you to apply the same styles to multiple selectors by separating them with commas.
+
+ 3 . Combinator Selector in css ?
+
+	Descendant Selector: Selects elements inside another (e.g., div p).
+	Child Selector: Selects direct children of an element (e.g., div > p).
+	Adjacent Selector : The Adjacent Sibling Selector (+) in CSS selects the immediate sibling that follows a specified element.
+	General Sibling Selector (~):Selects all siblings that follow a specified element.
+
+ 4 . Type of Style in css ?
+
+	Inline Styles:
+	Directly on HTML elements using the style attribute.
+	Internal Styles:
+	Within the <style> tag in the HTML document's head.
+	External Styles:
+	In a separate CSS file linked to the HTML document.
+
+ 5 . Difference between Pseudo class vs Pseudo Elements ?
+
+	Pseudo-Classes:
+	Represent the state of an element.
+  	Applied based on user interaction or position in the document.
+    	Denoted by a single colon (:).
+    	Example: :hover, :first-child.
+
+	Pseudo-Elements:
+    	Represent a specific part of an element.
+    	Used to style a part of the content.
+    	Denoted by a double colon (::).
+    	Example: ::before, ::first-line.
+
+ 6 . Pseudo class and elements in css ?
+
+	Pseudo-Classes:
+    	:hover - Selects and styles an element when the user hovers over it.
+    	:active - Styles an element when it is being activated (clicked).
+    	:focus - Selects and styles an element when it has focus.
+    	:first-child - Selects the first child of a parent element.
+    	:last-child - Selects the last child of a parent element.
+    	:nth-child(n) - Selects the nth child of a parent element.
+
+	Pseudo-Elements:
+    	::before - Inserts content before the content of the selected element.
+    	::after - Inserts content after the content of the selected element.
+    	::first-line - Styles the first line of text within an element.
+    	::first-letter - Styles the first letter of text within an element.
+    	::selection - Styles the portion of an element that is selected by a user.
+    	::placeholder - Styles the placeholder text in an input field.
+
+ 7 . What is ShortHand Property in css ?
+
+	Shorthand properties in CSS allow you to set multiple related properties using a single declaration. Examples include margin, padding, border, and font.
+
+ 8 . what is Box-Model in  css ?
+
+	The box model in CSS defines how an element is structured, including content, padding, border, and margin. It helps control the layout and spacing of 
+	elements on a webpage.
+
+ 9 . Difference between Border Box vs content box in css ?
+
+	content-box:
+  	Default value.
+    	Total width and height include only the content area.
+    	Padding and border are added to the specified width and height.
+
+	border-box:
+    	Total width and height include content, padding, and border.
+    	Padding and border are included in the specified width and height.
+
+ 10 . Difference between Absolute unit vs Relative Units in css ?
+
+	Absolute units (e.g., pixels) have fixed sizes.
+	relative units (e.g., percentages, ems) adapt to the context, allowing for more flexible and responsive designs.
+
+ 11 . Difference between rem vs em in css ?
+
+	rem is relative to the root (html) font size.
+    	em is relative to the nearest parent element's font size.
+
+ 12 . Difference between 30% vs 30vw in css ?
+
+	30% refers to 30% of the containing element's size.
+    	30vw refers to 30% of the viewport's width.
+
+ 13 . What is vmin vs vmax in css ?
+
+	vmin: Represents a percentage of the smaller of the viewport's height or width.
+	vmax: Represents a percentage of the larger of the viewport's height or width.
+
+ 14 . Difference between Fixed position and stickey ?
+
+	position: fixed;
+	Fixed relative to the browser window.
+	Remains in place even when scrolling.
+
+	position: sticky;
+	Initially acts like position: relative;.
+	Becomes position: fixed; when a specified scroll point is reached 
+
+
+ 15 . Difference between Relative position vs absolute position ?
+
+	position: relative:
+	Positioned relative to normal flow.
+        Can use offsets (top, right, bottom, left).
+
+	position: absolute:
+    	Positioned relative to nearest positioned ancestor.
+    	Removed from normal flow.
+    	Uses offsets (top, right, bottom, left).
+
+ 16 . What is static postion in css ?
+
+	Default position of elements in Browser.
+
+ 17 . Differentiate between padding and margin.
+
+	Padding is the space inside the border, while margin is the space outside the border.
+
+ 18 . How can you center an element horizontally in CSS?
+
+    	Use margin: auto; or text-align: center; for inline elements.
+
+ 19 . What is the difference between inline and block elements?
+
+    	Inline elements only take up as much width as necessary, and they do not force a new line.
+	Block elements take up the full width available and start on a new line.
+
+ 20 . Explain the CSS float property.
+
+    	The float property is used for positioning elements. It pushes an element to one side and allows content to wrap around it.
+
+ 21 . Explain the difference between classes and IDs in CSS.
+
+    	Classes are used to style multiple elements, while IDs are used to style a single unique element.
+
+ 22 . How can you hide an element in CSS?
+
+    	Use display: none; or visibility: hidden;
+
+ 23 . How do you center an element vertically in CSS?
+
+    	Use display: flex; on the container and align-items: center; or margin: auto; on the element.
+
+ 24 . What is the CSS z-index property used for?
+
+    	It controls the stacking order of elements positioned along the z-axis.
+
+ 25 . What is the purpose of the @media rule in CSS?
+
+    	It is used to apply different styles for different media types and screen sizes.
+
+ 26 . What does the opacity property do in CSS?
+
+    	It sets the transparency level of an element.
+
+ 27 . What does the opacity property do in CSS?
+
+    	It sets the transparency level of an element.
+
+ 28 . Explain the difference between :before and :after pseudo-elements.
+
+    	:before inserts content before the selected element, and :after inserts content after the selected element.
+
+ 29 . What is the purpose of the CSS overflow property?
+
+    	It controls how content that overflows its box is handled.
+
+ 30 . Explain the box-shadow property in CSS.
+
+    	It adds a shadow to an element, specifying the horizontal and vertical offset, blur radius, and color.
+
+ 31 . Difference between Transition and animation in css ?
+
+	Transition (transition):
+    	Smoothly changes property values.
+    	Triggered by state changes (e.g., hover).
+    	Applies to specific properties.
+
+	Animation (@keyframes and animation):
+    	Creates dynamic effects over time.
+    	Can be continuously running or triggered.
+    	Animates multiple properties with keyframes.
+
+ 32 . How do you select all even or odd elements with CSS?
+
+    	Use the :even and :odd selectors or the :nth-child(even) and :nth-child(odd) selectors.
+
+ 33 . Difference between inline vs inline-block in css ?
+
+	inline (display: inline):
+    	Flows with content.
+    	Ignores width/height.
+    	Doesn't start a new line.
+
+	inline-block (display: inline-block):
+    	Flows with content.
+    	Respects width/height.
+    	Allows same-line elements.
+
+ 34 . what is flex in css ?
+
+	Flexbox, or the Flexible Box Layout, is a layout model in CSS designed to provide a more efficient way to distribute
+	space and align items within a container, even when the size of the items is unknown or dynamic.
+
+ 35 . How do you enable Flexbox on an element?
+	
+	To enable Flexbox on an element, you set its display property to flex.
+
+ 36 . Explain the difference between justify-content and align-items.
+
+    justify-content is used to align items along the main axis.
+    align-items is used to align items along the cross axis.
+
+ 37 . What is the purpose of the flex shorthand property?
+
+	The flex shorthand property is a combination of flex-grow, flex-shrink, and flex-basis. It's used to set the three properties in one declaration.
+
+ 38 . How can you create equal-width columns with Flexbox?
+
+	To create equal-width columns, set the flex property to the same value on all the flex items within the container.
+		.container {
+	  display: flex;
+	}
+	
+	.item {
+	  flex: 1;
+	}
+
+ 39 . difference between main axis vs cross axis in flex ?
+
+	Main Axis in Row Direction:
+        Direction: Horizontal, from left to right.
+        Properties: justify-content aligns items horizontally, and align-items aligns them vertically.
+
+    	Cross Axis in Row Direction:
+        Direction: Vertical, from top to bottom.
+        Properties: align-content aligns multiple lines of items vertically, and align-items aligns items horizontally.
+
+    	Main Axis in Column Direction:
+        Direction: Vertical, from top to bottom.
+        Properties: justify-content aligns items vertically, and align-items aligns them horizontally.
+
+   	Cross Axis in Column Direction:
+        Direction: Horizontal, from left to right.
+        Properties: align-content aligns multiple lines of items horizontally, and align-items aligns items vertically.
+
+ 40 . Difference between align-content vs align-items in flex ?
+
+	align-items: Aligns individual flex items along the cross axis inside the flex container.
+	
+	align-content: Aligns multiple lines of flex items within the flex container when there's extra space in the cross axis. 
+
+ 41 . what is flex-basis,flex-grow and flex-shrink in flex ?
+
+	flex-grow:
+
+	    Description: Specifies the ability of a flex item to grow.
+	    Values: Numeric value (default is 0).
+	    Effect: Determines the factor by which the flex item should grow relative to other flex items if there is extra space along the main axis.
+
+	flex-shrink:
+
+	    Description: Specifies the ability of a flex item to shrink.
+	    Values: Numeric value (default is 1).
+	    Effect: Determines the factor by which the flex item should shrink relative to other flex items if there is not enough space along the main axis.
+
+	flex-basis:
+
+	    Description: Specifies the initial size of a flex item.
+	    Values: Length, percentage, or auto (default is auto).
+	    Effect: Sets the initial size of the flex item before remaining space is distributed according to flex-grow and flex-shrink.
+
+ 42 . Question: What is CSS Grid Layout, and how does it differ from other layout models like Flexbox?
+
+	CSS Grid Layout is a two-dimensional layout system for the web that allows you to create complex grid-based layouts with rows and columns. Unlike Flexbox, 
+	which is a one-dimensional layout model, CSS Grid deals with both rows and columns simultaneously, providing more control over the layout structure.
+
+ 43 . Explain the difference between grid-template-columns and grid-template-rows.
+
+	grid-template-columns defines the size and structure of columns in the grid.
+    	grid-template-rows defines the size and structure of rows in the grid.
+
+ 44 . Question: What is the purpose of the grid-gap property?
+	
+	grid-gap sets the size of the gap between rows and columns in the grid. It is a shorthand property for grid-row-gap and grid-column-gap. 
+	It's useful for creating space and improving the visual presentation of the grid.
+
+ 45 . Explain the purpose of the fr unit in CSS Grid.
+
+	The fr unit, or fractional unit, represents a fraction of the available space in the grid container. It's particularly useful for creating flexible and 
+	responsive layouts by distributing space proportionally.
+
+ 46 . difference between flex vs grid in css ?
+
+	Flexbox:
+      	One-dimensional layout.
+    	Grid:
+        Two-dimensional layout.
+
+    	Use Case:
+        Flexbox: Items in a container, smaller-scale layouts.
+        Grid: Overall page layout, larger and complex structures.
+
+ 47 . how to grid use  repeat multiple column and row create in responsive ?
+
+	.grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust the minimum and maximum width as needed */
+     }
+
+ 48 . What is the purpose of the grid-template-areas property?
+	
+	grid-template-areas allows you to create a named grid template by assigning names to specific areas in the
+	grid.It provides a convenient way to visually represent and define complex layouts.
+
+ 49 . How do you make an item span multiple rows or columns in CSS Grid?
+
+	Use the grid-row and grid-column properties to specify the starting and ending lines for an item. For example,
+	grid-row: span 2; makes an item span two rows.
+ 
+ 50 . 

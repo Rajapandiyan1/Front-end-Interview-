@@ -1,0 +1,656 @@
+ 1 . What is JavaScript
+
+	* JavaScript is a High Level programming language that developers use to make interactive webpages.
+
+ 	* They use JavaScript not only for client-side scripting but also with frameworks like Node.js for server-side development.
+
+ JavaScript is used by a wide range of developers
+	
+	Web Developement.
+	App Developement.
+	Desktop Application.
+	Game Developement.
+
+ 2 . What is the difference between let, const, and var in JavaScript?
+
+	var is function-scoped
+	Let and Const is Block - Level Scope
+	Let is re-assigned Value
+	Const is Not re-assigned value
+	
+ 3 . Explain the event delegation in JavaScript ?
+
+ 	Event delegation is a technique where a single event listener is attached to a common ancestor, and it can manage the events for multiple child elements.
+
+ 4 . What is closure in JavaScript?
+
+	JavaScript, a closure allows a function to retain access to variables from its outer (enclosing) scope, even after that outer function has finished executing
+	Example :
+	function outerFunction() {
+	  var outerVariable = "I am from outerFunction";
+	
+	  function innerFunction() {
+	    console.log(outerVariable);
+ 	 }
+
+ 	 return innerFunction;
+	}
+
+	var closureExample = outerFunction();
+	closureExample(); // Outputs: "I am from outerFunction"
+
+ 5 . What is the difference between == and === in JavaScript?
+
+	== is a loose equality operator that perform us inside value check in eqaul
+	For Example : 2 == '2' return true
+	=== is a strict equality operator that checks both value and data type
+	For Example : 2 == '2' return false
+
+ 6. Explain the concept of promises in JavaScript.
+
+	 Promises are a way to handle asynchronous operations in JavaScript.
+	 They represent a value that might be available now, or in the future, or never. Promises have states - pending, resolved (fulfilled), or rejected.
+
+	Ex Code :
+		function fetchData() {
+  	return new Promise((resolve, reject) => {
+    	setTimeout(() => {
+      	const data = { message: "Data fetched successfully!" };
+      	resolve(data);
+      	// reject(new Error("Failed to fetch data"));
+    	}, 2000); // Simulating a 2-second delay
+  	});
+	}
+	// Using the Promise
+	fetchData()
+  	.then((result) => {
+    	console.log(result.message);
+  	})
+  	.catch((error) => {
+    	console.error(error.message);
+  	})
+  	.finally(() => {
+    	console.log("Promise settled, regardless of success or failure");
+  	});
+	Code Explanation :
+	  The fetchData function returns a promise that simulates an asynchronous operation.
+	  The then method is used to handle the successful resolution of the promise. It takes a callback function that receives the resolved value.
+	  The catch method is used to handle any errors that might occur during the asynchronous operation. It takes a callback function that receives the error object.
+	  The finally method is optional and is called regardless of whether the promise is resolved or rejected. It is used for cleanup or finalization tasks.
+
+ 7 . What is the Event Loop in JavaScript?
+
+    	The Event Loop is a mechanism in JavaScript that handles asynchronous operations.
+	It continuously checks the message queue for new events and executes them in the order they are received, allowing non-blocking asynchronous execution
+
+	Call Stack > Web Api > Call Queue > Main thread remove > Event Loop to Queue to Call Stack
+
+ 8 . Explain the difference between null and undefined in JavaScript ?
+
+	Undefined assigned Value in Js Engine
+	Null assigned Value in Developer
+
+ 9 . What is the purpose of the map function in JavaScript?
+
+    	The map function is used to transform each element of an array using a provided function and creates a new array with the results.
+
+ 10 . What is the purpose of the JavaScript fetch API?
+
+ 	 The fetch API is used to make network requests and is commonly used to fetch resources (like JSON) from a server.
+	 It returns a Promise that resolves to the Response to that request
+ 11 . How does JavaScript handle asynchronous code execution?
+
+ 	JavaScript uses the event loop and callback functions to handle asynchronous code.
+	Promises, async/await, and callbacks are mechanisms for managing asynchronous operations
+
+ 12 . How does the async/await feature work in JavaScript?
+
+    The async keyword is used to declare an asynchronous function, and await is used to pause the execution of the function until the promise is resolved.
+
+ 13 . What is the purpose of the JavaScript spread operator (...)?
+ 
+	The JavaScript spread operator (...) allows us to quickly copy all or part of an existing array or object into another array or object.
+ 
+ 14 . Explain the difference between map and forEach.
+
+	 Both map and forEach iterate over an array, but map creates a new array with the results of applying a function to each element,
+	 while forEach simply executes a function for each element without creating a new array.
+ 15 . How does the some method differ from the every method in JavaScript ?
+	Find 
+	The find method is used to retrieve the first element in an array that satisfies a provided condition.
+	Returns the first element in the array that satisfies the provided callback function. If no element is found, it returns undefined.
+	
+	Filter
+	The filter method is used to create a new array containing elements that satisfy a provided condition.
+	filter returns a new array containing all elements that satisfy the condition or an empty array if none are found.
+
+ 16 . How does the some method differ from the every method in JavaScript?
+
+	The some method checks if at least one element in the array satisfies a given condition and returns true if so.
+	The every method checks if all elements in the array satisfy a given condition and returns true.
+
+ 17 . What is the purpose of the reduce method, and how does it work?
+
+	The reduce method is used to reduce an array to a single value by applying a provided function to each element.
+	It accumulates the results into a single value. The reduce function takes an accumulator and the current element as arguments.
+
+ 18 . Explain the difference between push() and pop() array methods.
+
+	push() adds elements to the end of an array.
+	pop() removes the last element from the end of an array.
+ 19 . Explain the difference between slice and splice methods.
+
+	slice returns a shallow copy of a portion of an array without modifying the original array.
+	splice modifies the original array by adding, removing, or replacing elements.
+
+ 20 . Differce between in Function declaraion and expression ?
+
+	Function declarations define a function using the function keyword, followed by the function name, parameters, and the function body.
+
+	Function expressions define a function as part of an expression, often by assigning it to a variable
+
+ 21 . What are arrow functions in JavaScript ?
+
+	Arrow functions have a shorter and more readable syntax compared to traditional function expressions.
+	If the arrow function body consists of a single expression, that expression is implicitly returned.
+	This future introduced in ES6
+ 22 . Explain object destructuring in JavaScript ? 
+
+	Object destructuring is a feature in JavaScript that allows you to extract values from objects and assign them to variables in a concise and readable manne.
+
+ 23 . Differce between Factory function vs Contructor function ?
+
+	Factory Function :
+	You prefer a more straightforward way to create objects without the need for new.
+	You don't need prototypal inheritance.
+	Ex code :
+	function createPerson(name, age) {
+ 	 return {
+ 	   name,
+  	  age,
+  	  sayHello() {
+   	   console.log(`Hello, my name is ${this.name}.`);
+    	}
+ 	 };
+	}
+
+	const person1 = createPerson('John', 25);
+	const person2 = createPerson('Alice', 30);
+
+	Contructor Function :
+	This can be more memory-efficient Management
+	You need prototypal inheritance.
+	You want to follow a more traditional object-oriented programming approach.
+	Ex -code :
+	function Person(name, age) {
+	  this.name = name;
+	  this.age = age;
+	}
+
+	Person.prototype.sayHello = function() {
+	  console.log(`Hello, my name is ${this.name}.`);
+	};
+
+	const person1 = new Person('John', 25);
+	const person2 = new Person('Alice', 30);
+
+ 24 . The major differences between sessionStorage and localStorage in JavaScript ?
+	
+	sessionStorage: Data stored in sessionStorage is available only for the duration of the page session.
+	
+	Limited to the specific window or tab in which it was set.
+	Data stored in one tab or window is not accessible to other tabs or windows, even if they are opened from the same website.
+
+	localStorage: Data stored in localStorage persists even after the browser is closed and reopened.
+	It has no expiration time, and the data remains available across multiple session
+	
+	Data stored in one tab or window is accessible to other tabs or windows that are opened from the same website.
+
+ 25 . Explain how default parameters work in JavaScript ?
+
+	function greet(name = "Guest", greeting = "Hello") {
+ 	 console.log(`${greeting}, ${name}!`);
+	}
+
+	// Examples of using the greet function
+	greet();                   // Outputs: Hello, Guest!
+	greet("John");             // Outputs: Hello, John!
+	greet("Jane", "Hi");       // Outputs: Hi, Jane!
+	greet(undefined, "Hola");   // Outputs: Hola, Guest!
+
+ 26 . difference between rest operator vs arguement object ?
+
+	Arguement :
+
+	Type:
+        It is not a real array; it is an object with a length property and numeric indices.
+
+	Availability:
+        Only available in regular functions, not in arrow functions
+
+        Rest Operator :
+
+    	Nature:
+    	The rest operator is a feature introduced in ES6 (ECMAScript 2015).
+    	It is used in the function parameter list to represent an indefinite number of arguments as an array.
+
+    	Type:
+    	The rest parameter creates a real array, making it easy to use array methods and features.
+
+    	Availability:
+    	Available in both regular functions and arrow functions.
+
+ 27 . Difference between Call , Apply and bind methods.
+
+	bind returns a new function with the specified this value but does not invoke the function immediately.
+	apply invokes the function with a specified this value and an array of arguments.
+	call invokes the function with a specified this value and a list of arguments
+ 
+ 28 . Difference between Splice and slice
+
+	slice creates a new array by extracting a portion of the original array without modifying the original array.
+	splice modifies the original array by removing, replacing, or adding elements in place.
+
+ 29 . Differnce between Object vs JSON 
+
+	Json :
+	 JSON only supports a limited set of data types: string, number, object, array, boolean, null.
+	 JSON has a more restricted syntax compared to JavaScript objects. For example, keys must be surrounded by double quotes.
+	 The built-in JavaScript JSON.stringify() method allows you to convert JavaScript objects to JSON format.
+	Object :
+	 Using the built-in JSON.parse() method, you can transform JSON data into a JavaScript object.
+	 Keys in key/value pairs don’t always need double quotes.
+	 Values can be of any data type, including other objects, functions, arrays, primitives, etc.
+ 30 . What is temporal Dead Zone ?
+
+	The Temporal Dead Zone (TDZ) is a concept in JavaScript related to the hoisting behavior of variables declared with let and const declaration before use in 
+	Temporal Dead Zone.
+
+ 31 . Difference between Fetch vs Axois
+
+	Error Handling :
+	
+	Fetch - > fetch does not reject the Promise on HTTP error status codes (e.g., 404 or 500) throw error manually .
+	fetch: When using fetch, you need to manually parse the response, which can involve additional code.
+
+	Axois - > Axios automatically rejects the Promise when the HTTP status code indicates an error (e.g., 404 or 500). 
+	This can simplify error handling in comparison to fetch
+	Axios automatically parses JSON responses, making the code for handling JSON data more concise.
+
+	Example Code :
+	Fetch ->
+	fetch('https://api.example.com/data')
+  	.then(response => {
+    	if (!response.ok) {
+      	throw new Error('Network response was not ok');
+    	}
+    	return response.json();
+ 	 })
+  	.then(data => console.log(data))
+	  .catch(error => console.error('Error:', error));
+
+     	 Axois - >
+	axios.get('https://api.example.com/data')
+	.then(response => console.log(response.data))
+  	.catch(error => console.error('Error:', error));
+
+ 32 . What is the prototype in JavaScript?
+
+    	The prototype is an object associated with every object in JavaScript, and it serves as a template for that object.
+	It is used for inheritance, allowing objects to inherit properties and methods from their prototypes.
+ 
+ 33 . What is callback hell ?
+
+	Callback hell, also known as the "pyramid of doom".
+	
+	Readability: The code becomes challenging to read and understand due to the deep nesting of callbacks.
+
+	Maintainability: Making changes or additions to the code becomes error-prone, and the structure is difficult to maintain.
+
+	Error Handling: Error handling becomes more complex, and there is a higher risk of overlooking errors
+
+        Example code for CallBack Hell in Error Handling
+ 	
+	function handleResult(error, result, nextFunction) {
+  	if (error) {
+    	console.error('Error:', error);
+  	} else {
+    	// Continue with the next function
+    	nextFunction(result);
+ 	 }
+	}
+
+	asyncFunction1(function(error1, result1) {
+  	handleResult(error1, result1, function(result2) {
+   	 asyncFunction2(result2, function(error2, result2) {
+    	  handleResult(error2, result2, function(result3) {
+     	   asyncFunction3(result3, function(error3, result3) {
+          	handleResult(error3, result3, function(result4) {
+            	asyncFunction4(result4, function(error4, result4) {
+        	      handleResult(error4, result4, function(result5) {
+        	        // Continue nesting as needed
+  	            });
+  	          });
+  	        });
+  	      });
+  	    });
+  	  });
+  	});
+	});
+
+ 34 . What is DOM ?
+
+	In JavaScript, the Document Object Model (DOM) is a programming interface that represents the structure,
+	content, and style of a document on the web.
+
+	BOM - > The BOM deals with the browser itself and provides objects and
+		 methods to interact with the browser window and its components.
+	BOM: Includes objects like window, navigator, location, history, and screen.
+
+	DOM - > DOM: Includes objects like document, element, and node for manipulating document structure and content.
+	Deals with the document structure (HTML or XML), enabling interaction and manipulation of content and
+	 structure on a web page.
+
+ 35 . What is bubbling and capturing in js .
+
+	Capturing Phase (optional): The event starts at the top of the DOM tree and moves down to the target element.
+	 This phase is less commonly used.
+
+	Target Phase: The event reaches the target element, the one that triggered the event.
+
+	Bubbling Phase: The event then bubbles up from the target element through its ancestors in the DOM tree.
+
+ 36 . Difference between Settimout vs setInterval in js
+
+	setTimeout:
+
+	Executes a function or evaluates an expression after a specified delay (in milliseconds).
+
+	Executes the specified function only once.
+	
+	setInterval :
+
+	Repeatedly executes a function or evaluates an expression at a specified interval (in milliseconds).
+
+	Continues executing the specified function at the defined interval until cleared
+
+ 37 . What is Template Literal in js ?
+
+	 Introduced in ES6.
+   	 Uses backticks (``) for string representation.
+   	 Supports variable interpolation with ${}.
+	Advantage :
+		   -> Variable Interpolation.
+		   -> Multiline Strings
+ 38 . What is Control Flow in js ?
+
+	Control flow in JavaScript determines the order in which statements are executed.
+
+	It includes conditionals (if, else, switch), loops (for, while, do...while), and
+	control structures for directing the flow of a program based on conditions.
+
+ 39 . Difference between in For in and For of loop ?
+	
+	for...in Loop :
+	Use to loop over all objects.
+	for...of Loop :
+	Use loop in String and Array etc.
+
+ 40 . difference between includes vs indexOf method in Array ?
+
+	Includes - > 
+	Return Value:
+	Returns true if the element is found, false otherwise.
+	indexof - >
+	Return Value:
+	Returns the index if the element is found, -1 otherwise.
+
+ 41 . difference between Prototype vs __proto__ ?
+
+    Prototype:
+    The "prototype" is a property of constructor functions in JavaScript. It is an object that is shared among all instances created with that constructor function.
+    When you create an object using a constructor function, the object's prototype is set to the constructor's "prototype" property.
+    This allows instances to inherit properties and methods from the prototype.
+
+    Ex code :
+	
+	function Person(name) {
+	  this.name = name;
+	}
+
+	Person.prototype.sayHello = function() {
+	  console.log('Hello, ' + this.name + '!');
+	};
+
+	const person1 = new Person('John');
+	person1.sayHello(); // Outputs: Hello, John!
+
+        proto:
+
+	"proto" (double underscore proto) is an accessor property that allows you to access and modify the prototype of an object directly.
+	It is considered outdated and is not part of the official ECMAScript specification.
+	Instead, you should use Object.getPrototypeOf() and Object.setPrototypeOf() for these operation
+
+	Ex code :
+
+	const obj = {};
+	const prototypeObj = { prop: 'I am in the prototype' };
+
+	// Setting the prototype using __proto__
+	obj.__proto__ = prototypeObj;
+
+	// Accessing the prototype using __proto__
+	console.log(obj.prop); // Outputs: I am in the prototype
+	important ! - > It's worth noting that "proto" is not standard, and its use is discouraged in modern JavaScript.
+
+ 42 . what is prototype chaining in js ?
+
+	Prototype chaining in JavaScript is the mechanism through which objects inherit properties and methods from their prototypes.
+	Every object in JavaScript has an associated prototype object, and this forms a chain that is followed when accessing properties or methods of an object.
+
+		Example code :
+	
+		// Grandfather constructor
+	function Grandfather(name) {
+ 	this.name = name;
+		}
+	
+	// Grandfather method
+	Grandfather.prototype.sayHello = function() {
+	  console.log(`Hello, I am ${this.name}, the Grandfather.`);
+	};
+	
+	// Father constructor
+	function Father(name, hobby) {
+	  // Call the Grandfather constructor with the Father's instance
+	  Grandfather.call(this, name);
+	  this.hobby = hobby;
+	}
+	
+	// Inherit from Grandfather
+	Father.prototype = Object.create(Grandfather.prototype);
+	
+	// Father method
+	Father.prototype.introduce = function() {
+	  console.log(`I am ${this.name}, the Father, and my hobby is ${this.hobby}.`);
+	};
+	
+	// Son constructor
+	function Son(name, hobby, sport) {
+	  // Call the Father constructor with the Son's instance
+	  Father.call(this, name, hobby);
+	  this.sport = sport;
+	}
+	
+	// Inherit from Father
+	Son.prototype = Object.create(Father.prototype);
+	
+	// Son method
+	Son.prototype.playSport = function() {	
+	  console.log(`I am ${this.name}, the Son, and I play ${this.sport}.`);
+	};
+		
+	// Instances
+	const grandfather = new Grandfather("John Sr.");
+	const father = new Father("John Jr.", "Reading");
+	const son = new Son("John III", "Gaming", "Football");
+	
+	// Using methods
+	grandfather.sayHello(); // Outputs: "Hello, I am John Sr., the Grandfather."
+	father.sayHello(); // Outputs: "Hello, I am John Jr., the Grandfather."
+	father.introduce(); // Outputs: "I am John Jr., the Father, and my hobby is Reading."
+	son.sayHello(); // Outputs: "Hello, I am John III, the Grandfather."
+	son.introduce(); // Outputs: "I am John III, the Father, and my hobby is Gaming."
+	son.playSport(); // Outputs: "I am John III, the Son, and I play Football."
+
+	Inbuild - Object Method in js 
+	
+ 43 .  Difference between in Create vs Assign method in js ?
+
+	Create - >
+	The new object inherits properties from the specified prototype.
+	Object.create() is primarily used for setting up inheritance by creating a new object with a specified prototype.
+	Ex code :
+
+	const myPrototype = { x: 10, y: 20 };
+	const newObj = Object.create(myPrototype);
+	console.log(newObj.x); // Outputs: 10
+
+	Assign - >
+	It is used for merging multiple objects into one.
+	    
+   	Object.assign() is used for copying properties from source objects to a target object, not necessarily for setting up inheritance.
+	Ex code :
+	
+	const target = { a: 1, b: 2 };
+	const source = { b: 3, c: 4 };
+	const mergedObject = Object.assign({}, target, source);
+	console.log(mergedObject); // Outputs: { a: 1, b: 3, c: 4 }
+
+ 44 . Entries method in Object ?
+
+	const myObject = { a: 1, b: 2, c: 3 };
+	const entriesArray = Object.entries(myObject);
+	console.log(entriesArray); // Outputs: [ [ 'a', 1 ], [ 'b', 2 ], [ 'c', 3 ] ]
+
+ 45 . Keys and Values in Object method.
+
+	// Object.keys()
+	const keysArray = Object.keys(myObject);
+	console.log(keysArray); // Outputs: [ 'a', 'b', 'c' ]
+
+	const valuesArray = Object.values(myObject);
+	console.log(valuesArray); // Outputs: [ 1, 2, 3 ]
+
+ 46 . setPrototype and getprototype in Object Method.
+
+	// Object.setPrototypeOf()
+	const myChildPrototypeObj = Object.create(myObject);
+	Object.setPrototypeOf(myChildPrototypeObj, { x: 50, y: 100 });
+	console.log(myChildPrototypeObj.x); // Outputs: 50
+
+	/ Object.getPrototypeOf()
+	const myChildObj = Object.create(myObject);
+	console.log(Object.getPrototypeOf(myChildObj) === myObject); // Outputs: true
+
+ 47 . What is Implicit Type Casting and Explicit Type Casting ?
+
+	Implicit Type Casting (Coercion):
+	Automatic conversion during operations
+	Ex code :
+	var result = 5 + "10"; // Result: "510"
+                                                     
+	Explicit Type Casting (Conversion):
+	Manual conversion using functions or operators
+	Ex code :
+	var num = parseInt("10"); // Convert string to number
+	var str = String(5); // Convert number to string
+
+ 48 . What is error handling in  js
+
+	Use try and catch blocks to catch and handle exceptions.
+
+	Code inside the try block is executed, and if an exception occurs,
+	the control is transferred to the corresponding catch block.
+
+	Ex code :
+	try {
+	    // Code that might throw an exception
+	} catch (error) {
+	    // Handle the exception
+	    console.error("An error occurred:", error.message);
+	}
+    Customize Error hanlding in Logic error
+
+	Ex code :
+	function divide(x, y) {
+	    if (y === 0) {
+	        throw new Error("Cannot divide by zero");
+	    }
+	    return x / y;
+	}
+
+	try {
+	console.log(divide(10, 0));
+	} catch (error) {
+	    console.error("Error caught:", error.message);
+	}
+
+ 49 . what is Map and set ?
+	
+	Map:
+	Designed for key-value pairs, where each key can be of any data type, and values are associated with those keys
+	Provides methods for iterating over both keys and values, such as forEach and for...of.
+	Allows direct access to values using keys.
+
+	Set:
+	Designed for storing unique values, ensuring that each value in the set is unique
+	Provides methods for iterating over values, such as forEach and for...of.
+	Values are the keys in a Set, and there is no direct access to a specific value using a key.
+
+ 50 . this keywork in js
+
+	Global Context:
+
+	console.log(this === window); // true (in a browser environment)
+
+	Function Context:
+	function myFunction() {
+	console.log(this === window);
+	}
+	myFunction(); // true (in a browser environment)
+
+	Method Contex :
+		var obj = {
+	    myMethod: function() {
+	        console.log(this === obj);
+	    }
+	};
+	obj.myMethod(); // true
+	
+	Event Handlers:
+	
+	document.getElementById('myButton').addEventListener('click', function() {
+    	console.log(this === document.getElementById('myButton'));
+	});
+
+	Constructor Functions :
+	
+	function MyClass() {
+	    this.myProperty = 'Hello';
+	}
+	
+	var instance = new MyClass();
+	console.log(instance.myProperty); // "Hello"
+
+	Arrow Functions :
+
+	var obj = {
+    	myMethod: function() {
+    	    setTimeout(() => {
+    	        console.log(this === obj);
+    	    }, 1000);
+    	}
+	};
+	obj.myMethod(); // true after 1 second
+
