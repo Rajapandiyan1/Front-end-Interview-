@@ -44,4 +44,4 @@
     	Git handles branching and merging efficiently. Developers can create branches for different features or bug fixes, and Git allows easy merging of changes 
 	from one branch to another using commands like git merge or git rebase.
 
- 10 . 
+ 10 .
