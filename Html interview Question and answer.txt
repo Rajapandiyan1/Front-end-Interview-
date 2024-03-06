@@ -1,0 +1,80 @@
+
+ 1 . What is HTML?
+
+	HTML (Hypertext Markup Language) is the standard markup language for creating web pages.
+	It structures content using a set of elements, each represented by tags.
+
+ 2 . What are semantic elements in HTML?
+
+	Semantic elements are tags that carry meaning about the structure and content of the page. Examples include <header>, <footer>, <nav>, <article>, and
+	<section>.
+
+ 3 .  What is the purpose of the DOCTYPE declaration?
+
+	The DOCTYPE declaration defines the document type and version of HTML being used. It helps browsers to render the document correctly.
+
+ 4 . Explain the difference between <div> and <span> tags.
+
+      	<div> is a block-level element used for grouping and applying styles to a section of content. <span> is an inline element used for applying styles to a 
+	specific part of text within a block.
+
+ 5 . Explain the difference between <script> and <link> tags in HTML.
+
+	<script> is used to embed or reference JavaScript code, while <link> is used to link external resources, such as stylesheets.
+
+ 6 . What is the purpose of the alt attribute in the <img> tag?
+
+	The alt attribute provides alternative text for an image, which is displayed if the image cannot be loaded. It is also used for accessibility, providing a 
+	description for screen readers.
+
+ 7 . what is <meta charset="UTF-8"> ? 
+
+	UTF-8 (Unicode Transformation Format, 8-bit) is a widely used character encoding that can represent almost all characters from all languages in a standardized 
+	way. 
+
+ 8 . why use <meta name="viewport" content="width=device-width, initial-scale=1.0"> ?
+
+	The <meta name="viewport" content="width=device-width, initial-scale=1.0"> tag in HTML is used for responsive web design. It ensures that the web page adapts 
+	to the device screen width and sets the initial zoom level to 1.0 for consistent display on various devices.
+
+ 9 . what is meta tag in html ?
+
+	A meta tag in HTML provides metadata about a web page, informing browsers and search engines about important details like character encoding, viewport 
+	settings, and page descriptions.
+
+ 10 . why use iframe tag in html ? 
+
+	An <iframe> in HTML is used to embed and display content from another source within a web page. It creates a separate frame for external content, such as a 
+	website or document.
+
+ 11 .  what is attribue in html ?
+
+	In HTML, an attribute provides extra information about an element and is specified in the element's opening tag.
+
+ 12 . how to write style in html ?
+
+	You can write styles in HTML using the <style> tag in the <head> section.
+	inline styles with the style attribute directly in HTML tags.
+	external source css file link tag use write style.
+
+ 13 . how to write js code in html ?
+
+	Inline JavaScript:
+	html
+	<script> // Your code here </script>
+
+	External JavaScript file:
+	html
+	<script src="script.js"></script>
+
+ 14 . what is form in html ?
+
+	Form to get different input values in user.
+	ex. radio - > gender
+	    checkbox - > hobbies
+	    input type number - > age
+	    input type text - > name
+
+ 15 . How can you create a hyperlink in HTML ?
+
+	To create a hyperlink in HTML, use the <a> element with the href attribute for the URL and provide link text between the opening and closing tags.
