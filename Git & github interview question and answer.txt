@@ -44,4 +44,83 @@
     	Git handles branching and merging efficiently. Developers can create branches for different features or bug fixes, and Git allows easy merging of changes 
 	from one branch to another using commands like git merge or git rebase.
 
- 10 .
+ 10 . Explain the difference between 'git commit' and 'git push.'
+
+	The 'git commit' command is used to save changes to the local repository. It creates a new commit with a 
+	unique identifier and a message describing the changes. On the other hand, 'git push' is used to upload 
+	the local commits to a remote repository, making them accessible to others. 
+
+ 11 . Question: What is the difference between git commit --amend and a regular commit?
+
+   	git commit --amend allows you to modify the last commit by adding changes or editing the commit message. 
+	It effectively replaces the previous commit with a new one.
+
+ 12 .  What is the purpose of the HEAD pointer in Git commits?
+
+    	The HEAD pointer in Git points to the latest commit in the current branch. It represents the snapshot of the working directory and is used as a reference 
+	for the next commit.
+
+ 13 . How can you create a branch and switch to it in a single Git command?
+
+    	The git checkout -b <branch-name> command creates a new branch and switches to it in one step.
+
+ 14 . What is fork in git ?
+
+	In Git, a "fork" is a personal copy of a repository hosted on a different user's account or organization. 
+	Forking is commonly used for contributing to open-source projects by allowing users to make changes 
+	independently before proposing them to the original project.
+
+ 15 . difference between reset and revert ?
+
+	git reset:
+        Rewrites commit history.
+	Remove existing commits
+
+    	git revert:
+        Adds new commits to undo changes.
+        Safe, doesn't alter existing commits. 
+
+ 16 . How do you unstage a file in Git using the command line?
+
+	To unstage a file in Git, you can use the git restore --staged <file> command. This command moves changes from the staging area back to the working 
+	directory, effectively undoing the staging of the specified file
+
+ 17 . How do you move changes from the working directory to the staging area in Git?
+
+	Use git add <file> to stage changes for the next commit.
+	# Stage a specific file for the next commit
+	git add index.html
+	# Stage all changes in the current directory and its subdirectories
+	git add .
+	# Stage changes in a specific directory
+	git add src/
+	# Stage changes with a specific file extension
+	git add *.js
+
+
+ 18 . difference between --soft vs --hard in git ?
+
+	git reset --hard: Irreversibly discards all changes in both the staging area and working directory, resetting the repository to a specific commit.
+
+    	git reset --soft: Resets the commit and staging area, preserving changes in the working directory, allowing for further modification and recommitting.
+
+ 19 . difference fetch vs pull in git ?
+
+	git fetch: Retrieves changes from a remote repository.
+
+	git pull: Fetches and automatically merges changes from a remote repository into the current branch.
+
+ 20 . Difference between merge and rebase in git 
+
+	Merge:
+    	Preserves branch history.
+    	Creates a new merge commit.
+	
+	Rebase:
+    	Rewrites commit history.
+    	Results in a linear history without merge commits.
+
+ 21 . what is merge conflict in git ?
+
+	A merge conflict in Git occurs when changes from different branches overlap and Git cannot automatically reconcile them. Manual intervention is needed 
+	to resolve conflicts by choosing which changes to keep.
